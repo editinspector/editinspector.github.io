@@ -140,15 +140,30 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
         <h2 class="title is-3">Edit Inspector Benchmark</h2>
+<!--        <h2 class="subtitle has-text-centered" style="padding: 10px; font-size: 1.3rem;">-->
+<!--            We introduce EditInspector, a novel benchmark for evaluation of text-guided image edits, based on human-->
+<!--            annotations collected using an extensive template for edit verification. EditInspector examines edits across-->
+<!--            five dimensions: (1) whether the edit accurately follows the instructions and aligns with user expectations;-->
+<!--            (2) presence of unintended artifacts; (3) technical quality, including resolution, sharpness, and clarity;-->
+<!--            (4) accuracy of the main difference description; (5) accuracy of a detailed listing of all differences-->
+<!--            between the original and the edited images.-->
+<!--        </h2>-->
+
         <div class="hero-body">
             <img src="static/images/model_answers.jpg">
             <h2 class="subtitle has-text-centered">
-                Models evaluated the edit “Let the floor be made of wood.” Only few identified the edit
+                Example of models evaluating the edit “Let the floor be made of wood.” Only few identified the edit
                 executed correctly. Gemini 1.5 failed to detect any differences between the images. GPT-4o recognized
                 the main floor change but missed additional edits, such as alterations to the fridge, door, and text on
                 the yellow box.
             </h2>
+
+<!--            <h2 class="subtitle has-text-centered" style="padding: 10px; font-size: 1.3rem;">-->
+<!--                Using the EditInspector benchmark, we show that state-of-the-art vision-language models struggle as edit-->
+<!--                inspectors, with accuracy near random chance, and fail to effectively assess image edits. To address these challenges, we propose two novel methods that outperform SoTA models in both artifact detection and difference caption generation.-->
+<!--            </h2>-->
         </div>
+
     </div>
 </section>
 <!-- End teaser video -->
@@ -186,14 +201,6 @@
         <h2 class="title is-3">Human Evaluation Framework</h2>
         <div class="hero-body">
             <h2 class="subtitle has-text-centered" style="padding-top: 30px; text-align: left !important;">
-                EditInspector examines edits across five dimensions:
-                <ul style="text-align: left; display: inline-block; margin-top: 1rem;">
-                    <li>(1) Whether the edit accurately follows the instructions and aligns with user expectations.</li>
-                    <li>(2) Introduction of unintended artifacts.</li>
-                    <li>(3) Technical quality (low resolution, blur, etc.).</li>
-                    <li>(4) Accuracy of the description of the main difference.</li>
-                    <li>(5) Accuracy of a detailed listing of differences between the original and the edited images.</li>
-                </ul>
             </h2>
             <img src="static/images/ui-example.jpg">
 
@@ -201,7 +208,7 @@
     </div>
 </section>
 
-<section class="hero teaser" style="padding-top: 2rem; ">
+<section class="hero teaser is-light" style="padding-top: 2rem; ">
     <div class="container is-max-desktop">
         <h2 class="title is-3">New Evaluation Metrics</h2>
         <div class="hero-body" style="display: flex; justify-content: space-between; flex-direction: row-reverse;">
@@ -214,7 +221,8 @@
                     issues.
                 </h4>
             </div>
-            <div class="side-explanation" style="max-width: 50%; font-size: 1.3em; font-weight: 500; line-height: 1.5; ">
+            <div class="side-explanation"
+                 style="max-width: 50%; font-size: 1.3em; font-weight: 500; line-height: 1.5; ">
                 We propose two novel evaluation metrics tailored for differences caption comparisons:
                 Model Precision (MP) and Hallucination Rate (HR). MP is the percentage of human-annotated differences
                 matching model detected ones, while HR is the percentage of model detected differences that do not
@@ -244,13 +252,15 @@
     </div>
 </section>
 
-<section class="hero teaser" style="padding-top: 2rem;">
+<section class="hero teaser is-light" style="padding-top: 2rem;">
     <div class="container is-max-desktop">
         <h2 class="title is-3">New Methods: Difference Caption Generation</h2>
         <div class="hero-body">
             <img src="static/images/caption%20generation%20pipeline.jpg">
             <h2 class="subtitle has-text-centered">
-                Example of our pipeline generating an instruction-grounded difference caption with rich metadata. Edit images are split into three zoom levels, with Gemini extracting and prioritizing captions to generate the metadata.
+                Example of our pipeline generating an instruction-grounded difference caption with rich metadata. Edit
+                images are split into three zoom levels, with Gemini extracting and prioritizing captions to generate
+                the metadata.
             </h2>
         </div>
     </div>
@@ -263,7 +273,11 @@
             <img src="static/images/artifact-method.jpg">
             <div style="text-align: center">Edit: "turn the stop sign to a lollipop".</div>
             <h2 class="subtitle has-text-centered">
-                We propose two novel methods for detecting artifacts using the Detic model. <br/> The first method compares segmentation probabilities for objects intersecting the turquoise in-painting mask between the pre-edit (left) and post-edit (right) images reveals two artifacts, the truck and small car, whose probability drops exceeds our threshold. The second method identifies elements that inter sect with the mask area, have disappeared from the image, and do not overlap with the edited object’s bounding box.
+                We propose two novel methods for detecting artifacts using the Detic model. <br/> The first method
+                compares segmentation probabilities for objects intersecting the turquoise in-painting mask between the
+                pre-edit (left) and post-edit (right) images reveals two artifacts, the truck and small car, whose
+                probability drops exceeds our threshold. The second method identifies elements that inter sect with the
+                mask area, have disappeared from the image, and do not overlap with the edited object’s bounding box.
             </h2>
         </div>
     </div>
@@ -274,7 +288,8 @@
         <div class="columns is-centered">
             <div class="column is-8">
                 <div class="content">
-                    <p> Built using <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">ACP Template</a>. </p>
+                    <p> Built using <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                       target="_blank">ACP Template</a>. </p>
                 </div>
             </div>
         </div>
